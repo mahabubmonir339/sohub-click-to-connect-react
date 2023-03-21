@@ -5,7 +5,7 @@ import dialCall from '../../assets/call-icon/phone-ringing-icon.png';
 import call from '../../assets/call-icon/call-logs-icon.png';
 import CallEnd from '../../assets/call-icon/complete-icon.png';
 const Click = () => {
-
+    // copy textArea section.....
     const [text1, setText1] = useState('');
     const textareaRef1 = useRef(null);
     const copyText1 = () => {
