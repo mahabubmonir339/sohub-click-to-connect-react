@@ -49,39 +49,75 @@ const Click = () => {
     const dtmf_time_to_disappear = queryParams.get('selectValueI');
     //font select.........
     const fontSelect = queryParams.get('font');
+
     // color shape ......
-    const callButtonBg = {
+    let callButtonBg = {
         backgroundColor: shape,
         paddingRight: '40px',
         paddingLeft: '40px'
     }
-    const callButtonTc = {
+    let callButtonTc = {
         color: text
     }
     //dial
-    const dialColorBackground = {
+    let dialColorBackground = {
         backgroundColor: dialColorB
     }
-    const dialColorText = {
+    let dialColorText = {
         color: dialColorT
     }
     // call color
-    const callColorBackground = {
+    let callColorBackground = {
         backgroundColor: callColorB,
         paddingRight: '50px',
         paddingLeft: '50px'
     }
-    const callColorText = {
+    let callColorText = {
         color: callColorT
     }
     // call End Color 
-    const callEndColorBackground = {
+    let callEndColorBackground = {
         backgroundColor: callEndColorB,
         paddingRight: '20px',
         paddingLeft: '20px'
     }
-    const callEndColorText = {
+    let callEndColorText = {
         color: callEndColorT
+    }
+    //round..........
+    if (shapeButton === 'Round') {
+        callButtonBg = {
+            backgroundColor: shape,
+            borderRadius: '50%',
+            padding: '20px'
+        }
+        callButtonTc = {
+            display: 'none'
+        }
+        dialColorBackground = {
+            backgroundColor: dialColorB,
+            borderRadius: '50%',
+            padding: '20px'
+        }
+        dialColorText = {
+            display: 'none'
+        }
+        callColorBackground = {
+            backgroundColor: callColorB,
+            borderRadius: '50%',
+            padding: '20px'
+        }
+        callColorText = {
+            display: 'none'
+        }
+        callEndColorBackground = {
+            backgroundColor: callEndColorB,
+            borderRadius: '50%',
+            padding: '20px'
+        }
+        callEndColorText = {
+            display: 'none'
+        }
     }
     // TextArea...............
     const [value1, setValue1] = useState(`<a href="#" className="float">
@@ -191,25 +227,25 @@ const Click = () => {
                 <div>
                     <h1 className='text-xl'>Initial state colors</h1>
                     <button className="rounded-full bg-secondary my-4" id='callButton' style={callButtonBg}>
-                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange' style={callButtonTc}> <p><img style={{ height: "25px" }} src={initialCall} alt="" /></p> <p> call Us</p></span>
+                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange'> <p><img style={{ height: "25px" }} src={initialCall} alt="" /></p> <p style={callButtonTc}> call Us</p></span>
                     </button>
                 </div>
                 <div>
                     <h1 className='text-xl'>Dial status colors</h1>
                     <button className="rounded-full bg-secondary my-4" id='callButton' style={dialColorBackground}>
-                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange' style={dialColorText}> <p><img style={{ height: "25px" }} src={dialCall} alt="" /></p> <p> Connecting...</p></span>
+                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange'> <p><img style={{ height: "25px" }} src={dialCall} alt="" /></p> <p style={dialColorText}> Connecting...</p></span>
                     </button>
                 </div>
                 <div>
                     <h1 className='text-xl'>Call status colors</h1>
                     <button className="rounded-full bg-secondary my-4" id='callButton' style={callColorBackground}>
-                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange' style={callColorText}> <p><img style={{ height: "25px" }} src={call} alt="" /></p> <p> 00:00</p></span>
+                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange'> <p><img style={{ height: "25px" }} src={call} alt="" /></p> <p style={callColorText}> 00:00</p></span>
                     </button>
                 </div>
                 <div>
                     <h1 className='text-xl'>Colors for call end</h1>
                     <button className="rounded-full bg-secondary my-4" id='callButton' style={callEndColorBackground}>
-                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange' style={callEndColorText}> <p><img style={{ height: "25px" }} src={CallEnd} alt="" /></p> <p> call Ended</p></span>
+                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange'> <p><img style={{ height: "25px" }} src={CallEnd} alt="" /></p> <p style={callEndColorText}> call Ended</p></span>
                     </button>
                 </div>
             </div>

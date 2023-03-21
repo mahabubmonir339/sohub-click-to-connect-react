@@ -73,6 +73,46 @@ const Customize_Call_Button = () => {
     const handleSelectChange = (event) => {
         setSelectValue(event.target.value);
     }
+    // Rounded...... 
+    if (selectValue === "Round") {
+
+        appStyle = {
+            borderRadius: '50%',
+
+            backgroundColor: currentColor,
+            // paddingRight: '50px',
+            // paddingLeft: '50px'
+            padding: '20px'
+        };
+        textColor = {
+            display: "none"
+
+        };
+        dialColorBackground = {
+            backgroundColor: dialColorB,
+            borderRadius: '50%',
+            padding: '20px'
+        };
+        dialColorText = {
+            display: "none"
+        };
+        callColorBackground = {
+            backgroundColor: callColorB,
+            borderRadius: '50%',
+            padding: '20px'
+        };
+        callColorText = {
+            display: "none"
+        };
+        callEndColorBackground = {
+            backgroundColor: callEndColorB,
+            borderRadius: '50%',
+            padding: '20px'
+        };
+        callEndColorText = {
+            display: "none"
+        }
+    }
     // DTMF keyboard placement...
     const [selectValueK, setSelectValueK] = useState('Top');
     const handleSelectChangeK = (event) => {
@@ -208,7 +248,7 @@ const Customize_Call_Button = () => {
                                 </div>
                                 <div>
                                     <button className="rounded-full bg-secondary my-4" id='callButton' style={appStyle}>
-                                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange' style={textColor}> <p><img style={{ height: "25px" }} src={initialCall} alt="" /></p> <p> call Us</p></span>
+                                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange'> <p><img style={{ height: "25px" }} src={initialCall} alt="" /></p> <p style={textColor}> call Us</p></span>
                                     </button>
                                 </div>
                             </div>
@@ -232,7 +272,7 @@ const Customize_Call_Button = () => {
                                 </div>
                                 <div>
                                     <button className="rounded-full bg-secondary my-4" id='callButton' style={dialColorBackground}>
-                                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange' style={dialColorText}> <p><img style={{ height: "25px" }} src={dialCall} alt="" /></p> <p> Connecting...</p></span>
+                                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange'> <p><img style={{ height: "25px" }} src={dialCall} alt="" /></p> <p style={dialColorText}> Connecting...</p></span>
                                     </button>
                                 </div>
                             </div>
@@ -256,7 +296,7 @@ const Customize_Call_Button = () => {
                                 </div>
                                 <div>
                                     <button className="rounded-full bg-secondary my-4" id='callButton' style={callColorBackground}>
-                                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange' style={callColorText}> <p><img style={{ height: "25px" }} src={call} alt="" /></p> <p> 00:00</p></span>
+                                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange'> <p><img style={{ height: "25px" }} src={call} alt="" /></p> <p style={callColorText}> 00:00</p></span>
                                     </button>
                                 </div>
                             </div>
@@ -280,7 +320,7 @@ const Customize_Call_Button = () => {
                                 </div>
                                 <div>
                                     <button className="rounded-full bg-secondary my-4" id='callButton' style={callEndColorBackground}>
-                                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange' style={callEndColorText}> <p><img style={{ height: "25px" }} src={CallEnd} alt="" /></p> <p> Call Ended</p></span>
+                                        <span className='flex gap-2 items-center justify-center  text-white text-l inline' id='colorChange'> <p><img style={{ height: "25px" }} src={CallEnd} alt="" /></p> <p style={callEndColorText}> Call Ended</p></span>
                                     </button>
                                 </div>
                             </div>
